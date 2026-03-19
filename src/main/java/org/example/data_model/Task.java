@@ -1,7 +1,7 @@
 package org.example;
 import java.io.Serializable;
 
-public abstract class Task implements Serializable{
+public abstract sealed class Task implements Serializable permits data_model.SimpleTask, data_model.ComplexTask {
     public int idTask;
     public String statusTask;
 
