@@ -1,7 +1,7 @@
-package org.example;
+package org.example.data_model;
 import java.io.Serializable;
 
-public abstract sealed class Task implements Serializable permits data_model.SimpleTask, data_model.ComplexTask {
+public abstract sealed class Task implements Serializable permits SimpleTask, ComplexTask{
     public int idTask;
     public String statusTask;
 
