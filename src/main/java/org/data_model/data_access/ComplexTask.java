@@ -1,4 +1,4 @@
-package org.example.data_model;
+package org.data_model.data_access;
 
 import java.util.ArrayList;
 
@@ -10,8 +10,10 @@ public final class ComplexTask extends Task {
         this.subtasks = new ArrayList<>();
     }
 
-    public void addSubtask(Task task) {
-        this.subtasks.add(task);
+    public void addSubTask(Task task) {
+        if(task != null){
+            this.subtasks.add(task);
+        }
     }
 
     @Override
@@ -30,4 +32,5 @@ public final class ComplexTask extends Task {
     public void setSubtasks(ArrayList<Task> subtasks) {
         this.subtasks = subtasks;
     }
+
 }

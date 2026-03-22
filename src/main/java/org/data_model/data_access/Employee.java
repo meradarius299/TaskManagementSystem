@@ -1,4 +1,4 @@
-package org.example.data_model;
+package org.data_model.data_access;
 import java.io.Serializable;
 
 public class Employee implements Serializable {

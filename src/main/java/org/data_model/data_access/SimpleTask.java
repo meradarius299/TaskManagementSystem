@@ -1,13 +1,15 @@
-package org.example.data_model;
+package org.data_model.data_access;
 
 public final class SimpleTask extends Task {
     public int startHour;
     public int endHour;
 
-    public SimpleTask(int idTask, int startHour, int endHour) {
-        super(idTask);
-        this.startHour = startHour;
-        this.endHour = endHour;
+    public SimpleTask(int id, int start, int end) {
+        super(id);
+        this.idTask = id;
+        this.startHour = start;
+        this.endHour = end;
+        this.statusTask = "Uncompleted";
     }
 
     @Override
