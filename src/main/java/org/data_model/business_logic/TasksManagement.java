@@ -18,7 +18,7 @@ public class TasksManagement implements Serializable {
         if (!map.containsKey(e)) {
             map.put(e, new ArrayList<>());
         }
-        // Adăugăm task-ul DOAR dacă nu este null
+        
         if (t != null) {
             map.get(e).add(t);
         }
