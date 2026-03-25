@@ -1,12 +1,9 @@
 package org.data_model.business_logic;
 
 import org.data_model.data_access.*;
-import org.data_model.data_access.SerializationOperation;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.util.Map;
 import java.util.List;
 
@@ -28,116 +25,94 @@ public class TaskManagementGUI extends JFrame {
 
     private void prepareGUI() {
         this.setTitle("Task Management System 2026");
-        this.setSize(1000, 700);
-
-
-        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        this.setSize(1100, 750);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(new BorderLayout());
 
-        String[] columns = {"ID Emp", "Nume", "ID Task", "Tip", "Status", "Durata (h)"};
-        tableModel = new DefaultTableModel(columns, 0);
-        table = new JTable(tableModel);
-        this.add(new JScrollPane(table), BorderLayout.CENTER);
+        JPanel mainControlPanel = new JPanel(new BorderLayout());
+        
+        JPanel inputPanel = new JPanel(new GridLayout(0, 4, 15, 15));
+        inputPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
-        JPanel controlPanel = new JPanel(new GridLayout(0, 4, 10, 10));
-        controlPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-
-        controlPanel.add(new JLabel("ID Angajat:"));
+        inputPanel.add(new JLabel("Employee ID:"));
         empIdField = new JTextField();
-        controlPanel.add(empIdField);
-        controlPanel.add(new JLabel("Nume Angajat:"));
+        inputPanel.add(empIdField);
+
+        inputPanel.add(new JLabel("Employee Name:"));
         empNameField = new JTextField();
-        controlPanel.add(empNameField);
+        inputPanel.add(empNameField);
 
-        // Inputuri Task
-        controlPanel.add(new JLabel("ID Task (Parinte):"));
+        inputPanel.add(new JLabel("Parent Task ID:"));
         taskIdField = new JTextField();
-        controlPanel.add(taskIdField);
-        controlPanel.add(new JLabel("Tip Task:"));
-        taskTypeCombo = new JComboBox<>(new String[]{"Simple", "Complex"});
-        controlPanel.add(taskTypeCombo);
+        inputPanel.add(taskIdField);
 
-        controlPanel.add(new JLabel("Ore (Start / End):"));
-        JPanel hourPanel = new JPanel(new GridLayout(1, 2));
+        inputPanel.add(new JLabel("Task Type:"));
+        taskTypeCombo = new JComboBox<>(new String[]{"Simple", "Complex"});
+        inputPanel.add(taskTypeCombo);
+
+        inputPanel.add(new JLabel("Hours (Start / End):"));
+        JPanel hourPanel = new JPanel(new GridLayout(1, 2, 5, 0));
         startHourField = new JTextField();
         endHourField = new JTextField();
         hourPanel.add(startHourField);
         hourPanel.add(endHourField);
-        controlPanel.add(hourPanel);
+        inputPanel.add(hourPanel);
 
-        controlPanel.add(new JLabel("Status:"));
+        inputPanel.add(new JLabel("Status:"));
         statusCombo = new JComboBox<>(new String[]{"Uncompleted", "Completed"});
-        controlPanel.add(statusCombo);
+        inputPanel.add(statusCombo);
 
-        JButton btnAddEmp = new JButton("Adauga Angajat");
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
+        
+        JButton btnAddEmp = new JButton("Add Employee");
         btnAddEmp.addActionListener(e -> addEmployeeAction());
-        controlPanel.add(btnAddEmp);
+        buttonPanel.add(btnAddEmp);
 
-        JButton btnAddTask = new JButton("Atribuie Task");
+        JButton btnAddTask = new JButton("Assign Task");
         btnAddTask.addActionListener(e -> addTaskAction());
-        controlPanel.add(btnAddTask);
+        buttonPanel.add(btnAddTask);
 
-        JButton btnAddSub = new JButton("Adauga Subtask la Complex");
+        JButton btnAddSub = new JButton("Add Subtask");
         btnAddSub.addActionListener(e -> addSubTaskAction());
-        controlPanel.add(btnAddSub);
+        buttonPanel.add(btnAddSub);
 
-        JButton btnModify = new JButton("Modifica Status");
+        JButton btnModify = new JButton("Modify Status");
         btnModify.addActionListener(e -> modifyStatusAction());
-        controlPanel.add(btnModify);
+        buttonPanel.add(btnModify);
 
-        JButton btnStats = new JButton("Afișeaza Statistici");
+        JButton btnStats = new JButton("Show Statistics");
         btnStats.addActionListener(e -> showStatsAction());
-        controlPanel.add(btnStats);
+        buttonPanel.add(btnStats);
 
-        this.add(controlPanel, BorderLayout.SOUTH);
-        try {
-            int empId = Integer.parseInt(empIdField.getText().trim());
-            int parentId = Integer.parseInt(taskIdField.getText().trim());
+        JButton btnClear = new JButton("Clear All");
+        btnClear.setBackground(new Color(255, 150, 150));
+        btnClear.addActionListener(e -> clearAllDataAction());
+        buttonPanel.add(btnClear);
 
-            String subIdStr = JOptionPane.showInputDialog("ID pentru Subtask-ul nou:");
-            if (subIdStr == null) return;
-            int subId = Integer.parseInt(subIdStr);
+        mainControlPanel.add(inputPanel, BorderLayout.CENTER);
+        mainControlPanel.add(buttonPanel, BorderLayout.SOUTH);
+        
+        this.add(mainControlPanel, BorderLayout.NORTH);
 
-            int start = Integer.parseInt(startHourField.getText().trim());
-            int end = Integer.parseInt(endHourField.getText().trim());
+        String[] columns = {"Emp ID", "Name", "Task ID", "Type", "Status", "Duration (h)"};
+        tableModel = new DefaultTableModel(columns, 0);
+        table = new JTable(tableModel);
+        table.setFillsViewportHeight(true);
+        
+        JScrollPane scrollPane = new JScrollPane(table);
+        this.add(scrollPane, BorderLayout.CENTER);
 
-            SimpleTask sub = new SimpleTask(subId, start, end);
-            logic.addSubTaskToComplex(empId, parentId, sub);
-
-            updateTable();
-        } catch (NumberFormatException ex) {
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            JOptionPane.showMessageDialog(this, "A aparut o eroare: " + ex.getMessage());
-        }
-        JButton btnClear = new JButton("Șterge Tot");
-        btnClear.setBackground(new Color(255, 100, 100));
-        btnClear.addActionListener(e -> {
-            int confirm = JOptionPane.showConfirmDialog(this,
-                    "Sigur vrei să ștergi TOȚI angajatii și task-urile?",
-                    "Confirmare Stergere", JOptionPane.YES_NO_OPTION);
-
-            if (confirm == JOptionPane.YES_OPTION) {
-                logic.clearAllData();
-                updateTable();
-
-                JOptionPane.showMessageDialog(this, "Tabelul a fost curatat!");
-            }
-        });
-        controlPanel.add(btnClear);
-
+        this.setLocationRelativeTo(null);
     }
 
     private void addEmployeeAction() {
         try {
             int id = Integer.parseInt(empIdField.getText().trim());
             String name = empNameField.getText().trim();
-            if(name.isEmpty()) throw new Exception("Numele nu poate fi gol!");
-
+            if(name.isEmpty()) throw new Exception("Name cannot be empty!");
             logic.assignTaskToEmployee(new Employee(id, name), null);
             updateTable();
-        } catch (Exception ex) { showMessage("Eroare: " + ex.getMessage()); }
+        } catch (Exception ex) { showMessage("Error: " + ex.getMessage()); }
     }
 
     private void addTaskAction() {
@@ -145,15 +120,9 @@ public class TaskManagementGUI extends JFrame {
             int empId = Integer.parseInt(empIdField.getText().trim());
             int tId = Integer.parseInt(taskIdField.getText().trim());
             String type = (String) taskTypeCombo.getSelectedItem();
-
-            Task newTask;
-            if ("Simple".equals(type)) {
-                int s = Integer.parseInt(startHourField.getText());
-                int e = Integer.parseInt(endHourField.getText());
-                newTask = new SimpleTask(tId, s, e);
-            } else {
-                newTask = new ComplexTask(tId);
-            }
+            Task newTask = "Simple".equals(type) ? 
+                new SimpleTask(tId, Integer.parseInt(startHourField.getText()), Integer.parseInt(endHourField.getText())) : 
+                new ComplexTask(tId);
 
             boolean found = false;
             for (Employee e : logic.getMap().keySet()) {
@@ -163,66 +132,55 @@ public class TaskManagementGUI extends JFrame {
                     break;
                 }
             }
-            if(!found) showMessage("Angajatul nu a fost găsit!");
+            if(!found) showMessage("Employee not found!");
             updateTable();
-        } catch (Exception ex) { showMessage("Date task invalide!"); }
+        } catch (Exception ex) { showMessage("Invalid task data!"); }
     }
 
     private void addSubTaskAction() {
         try {
             int empId = Integer.parseInt(empIdField.getText().trim());
             int parentId = Integer.parseInt(taskIdField.getText().trim());
-
-            String subIdStr = JOptionPane.showInputDialog("Introduceti ID-ul noului Subtask:");
+            String subIdStr = JOptionPane.showInputDialog(this, "New Subtask ID:");
             if (subIdStr == null) return;
 
-            int subId = Integer.parseInt(subIdStr);
-            int start = Integer.parseInt(startHourField.getText());
-            int end = Integer.parseInt(endHourField.getText());
-
-            SimpleTask newSub = new SimpleTask(subId, start, end);
+            SimpleTask newSub = new SimpleTask(Integer.parseInt(subIdStr), 
+                    Integer.parseInt(startHourField.getText()), Integer.parseInt(endHourField.getText()));
             logic.addSubTaskToComplex(empId, parentId, newSub);
-
             updateTable();
-            showMessage("Subtask adaugat cu succes!");
-        } catch (Exception ex) {
-            showMessage("Eroare la adăugare subtask: " + ex.getMessage());
-        }
+            showMessage("Subtask added successfully!");
+        } catch (Exception ex) { showMessage("Error: " + ex.getMessage()); }
     }
 
     private void modifyStatusAction() {
         try {
-            int empId = Integer.parseInt(empIdField.getText().trim());
-            int tId = Integer.parseInt(taskIdField.getText().trim());
-            String status = (String) statusCombo.getSelectedItem();
-
-            logic.modifyTaskStatus(empId, tId, status);
+            logic.modifyTaskStatus(Integer.parseInt(empIdField.getText().trim()), 
+                    Integer.parseInt(taskIdField.getText().trim()), (String)statusCombo.getSelectedItem());
             updateTable();
-        } catch (Exception ex) { showMessage("Eroare la modificare status!"); }
+        } catch (Exception ex) { showMessage("Error modifying status!"); }
+    }
+
+    private void clearAllDataAction() {
+        int confirm = JOptionPane.showConfirmDialog(this, "Delete everything?", "Confirmation", JOptionPane.YES_NO_OPTION);
+        if (confirm == JOptionPane.YES_OPTION) {
+            logic.clearAllData();
+            updateTable();
+        }
     }
 
     private void showStatsAction() {
         Utility.filterAndDisplayOverworkedEmployees(logic);
-        Map<String, Map<String, Integer>> stats = Utility.getTaskStatistics(logic);
-        showMessage("Statistici rulate in consola pentru " + stats.size() + " angajati.");
+        showMessage("Statistics generated in console.");
     }
 
     public void updateTable() {
         tableModel.setRowCount(0);
         for (Map.Entry<Employee, List<Task>> entry : logic.getMap().entrySet()) {
             Employee emp = entry.getKey();
-            List<Task> tasks = entry.getValue();
-
-            if (tasks != null && !tasks.isEmpty()) {
-                for (Task t : tasks) {
-                    if (t == null) continue;
-                    tableModel.addRow(new Object[]{
-                            emp.getIdEmployee(), emp.getName(), t.getIdTask(),
-                            t.getClass().getSimpleName(), t.getStatusTask(), t.estimateDuration()
-                    });
-                }
-            } else {
-                tableModel.addRow(new Object[]{emp.getIdEmployee(), emp.getName(), "-", "-", "-", 0});
+            for (Task t : entry.getValue()) {
+                if (t == null) continue;
+                tableModel.addRow(new Object[]{ emp.getIdEmployee(), emp.getName(), t.getIdTask(), 
+                    t.getClass().getSimpleName(), t.getStatusTask(), t.estimateDuration() });
             }
         }
     }
