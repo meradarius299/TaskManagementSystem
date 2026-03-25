@@ -18,6 +18,11 @@ public class TaskManagementGUI extends JFrame {
     private JComboBox<String> statusCombo;
 
     public TaskManagementGUI(TasksManagement logic) {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            // Fallback to default
+        }
         this.logic = logic;
         prepareGUI();
         updateTable();
@@ -65,26 +70,32 @@ public class TaskManagementGUI extends JFrame {
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
         
         JButton btnAddEmp = new JButton("Add Employee");
+        btnAddEmp.setFocusPainted(false);
         btnAddEmp.addActionListener(e -> addEmployeeAction());
         buttonPanel.add(btnAddEmp);
 
         JButton btnAddTask = new JButton("Assign Task");
+        btnAddTask.setFocusPainted(false);
         btnAddTask.addActionListener(e -> addTaskAction());
         buttonPanel.add(btnAddTask);
 
         JButton btnAddSub = new JButton("Add Subtask");
+        btnAddSub.setFocusPainted(false);
         btnAddSub.addActionListener(e -> addSubTaskAction());
         buttonPanel.add(btnAddSub);
 
         JButton btnModify = new JButton("Modify Status");
+        btnModify.setFocusPainted(false);
         btnModify.addActionListener(e -> modifyStatusAction());
         buttonPanel.add(btnModify);
 
         JButton btnStats = new JButton("Show Statistics");
+        btnStats.setFocusPainted(false);
         btnStats.addActionListener(e -> showStatsAction());
         buttonPanel.add(btnStats);
 
         JButton btnClear = new JButton("Clear All");
+        btnClear.setFocusPainted(false);
         btnClear.setBackground(new Color(255, 150, 150));
         btnClear.addActionListener(e -> clearAllDataAction());
         buttonPanel.add(btnClear);
