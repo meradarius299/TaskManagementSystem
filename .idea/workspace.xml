@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3438ced3-b196-4134-99a5-bdcd547a6bb6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_26_2026_11_56_AM_[Changes]/TaskGUI$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_26_2026_11_56_AM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_26_2026_11_56_AM_[Changes]/tasks_management.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_26_2026_11_56_AM_[Changes]1/TaskGUI$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_26_2026_11_56_AM_[Changes]1/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_26_2026_11_56_AM_[Changes]1/tasks_management.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_26_2026_11_56_AM__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_26_2026_11_56_AM__Changes_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PT_30222_Mera_Darius_0.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/org/data_model/EmployeeTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/data_model/GUI/TaskGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/data_model/GUI/TaskGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks_management.ser" beforeDir="false" afterPath="$PROJECT_DIR$/tasks_management.ser" afterDir="false" />
-    </list>
+    <list default="true" id="3438ced3-b196-4134-99a5-bdcd547a6bb6" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -135,7 +120,7 @@
       <workItem from="1774480888389" duration="208000" />
       <workItem from="1774481117389" duration="842000" />
       <workItem from="1774515047979" duration="76000" />
-      <workItem from="1774515160562" duration="1754000" />
+      <workItem from="1774515160562" duration="2061000" />
     </task>
     <servers />
   </component>
