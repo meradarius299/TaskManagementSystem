@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="PT2026_30222_Mera_Darius_Assignment_1" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="PT2026_30222_Mera_Darius_Assignment_1" target="17" />
+      <module name="PT_30222_Mera_Darius_0" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
