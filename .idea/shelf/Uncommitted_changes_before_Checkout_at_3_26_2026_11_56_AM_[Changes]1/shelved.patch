@@ -1,0 +1,116 @@
+Index: src/main/java/org/example/Main.java
+===================================================================
+diff --git a/src/main/java/org/example/Main.java b/src/main/java/org/example/Main.java
+deleted file mode 100644
+--- a/src/main/java/org/example/Main.java	(revision 102925d51e783dc1709b813edceea8a8c9ca8591)
++++ /dev/null	(revision 102925d51e783dc1709b813edceea8a8c9ca8591)
+@@ -1,17 +0,0 @@
+-package org.example;
+-
+-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+-public class Main {
+-    public static void main(Strin]g[] args) {
+-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
+-        // to see how IntelliJ IDEA suggests fixing it.
+-        System.out.printf("Hello and welcome!");
+-
+-        for (int i = 1; i <= 5; i++) {
+-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
+-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
+-            System.out.println("i = " + i);
+-        }
+-    }
+-}
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"VcsDirectoryMappings\">\r\n<<<<<<< HEAD\r\n    <mapping directory=\"\" vcs=\"Git\" />\r\n=======\r\n    <mapping directory=\"$PROJECT_DIR$\" vcs=\"Git\" />\r\n>>>>>>> 2ce7a517eea4494e33444b74fc905b8aebf4b58f\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+--- a/.idea/vcs.xml	(revision 102925d51e783dc1709b813edceea8a8c9ca8591)
++++ b/.idea/vcs.xml	(date 1774481340177)
+@@ -1,10 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="VcsDirectoryMappings">
+-<<<<<<< HEAD
+     <mapping directory="" vcs="Git" />
+-=======
+-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+->>>>>>> 2ce7a517eea4494e33444b74fc905b8aebf4b58f
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"3438ced3-b196-4134-99a5-bdcd547a6bb6\" name=\"Changes\" comment=\"\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 7\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"3BK4jR3KaoYreYIBT8RwVDW1Oox\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;Application.TaskGUI.executor&quot;: &quot;Run&quot;,\r\n    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\r\n    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/Darius Mera/Desktop/pt2026_30222_mera_darius_assignment_1&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CreateClassDialog.RecentsKey\">\r\n      <recent name=\"org.data_model.business_logic\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Darius Mera\\Desktop\\pt2026_30222_mera_darius_assignment_1\\.idea\" />\r\n      <recent name=\"C:\\Users\\Darius Mera\\Desktop\\pt2026_30222_mera_darius_assignment_1\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28539.33\" />\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-IU-252.28539.33\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"3438ced3-b196-4134-99a5-bdcd547a6bb6\" name=\"Changes\" comment=\"\" />\r\n      <created>1774224562336</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1774224562336</updated>\r\n      <workItem from=\"1774224563885\" duration=\"791000\" />\r\n      <workItem from=\"1774253342349\" duration=\"20000\" />\r\n      <workItem from=\"1774260583387\" duration=\"10000\" />\r\n      <workItem from=\"1774260619260\" duration=\"25000\" />\r\n      <workItem from=\"1774374938237\" duration=\"640000\" />\r\n      <workItem from=\"1774381208210\" duration=\"6000\" />\r\n      <workItem from=\"1774381931878\" duration=\"807000\" />\r\n      <workItem from=\"1774388177412\" duration=\"6964000\" />\r\n      <workItem from=\"1774400626194\" duration=\"12000\" />\r\n      <workItem from=\"1774401212529\" duration=\"151000\" />\r\n      <workItem from=\"1774401614192\" duration=\"22000\" />\r\n      <workItem from=\"1774401673078\" duration=\"3000\" />\r\n      <workItem from=\"1774402181199\" duration=\"83000\" />\r\n      <workItem from=\"1774428292238\" duration=\"2200000\" />\r\n      <workItem from=\"1774430602827\" duration=\"897000\" />\r\n      <workItem from=\"1774431536627\" duration=\"8592000\" />\r\n      <workItem from=\"1774446988314\" duration=\"238000\" />\r\n      <workItem from=\"1774447247075\" duration=\"146000\" />\r\n      <workItem from=\"1774454760697\" duration=\"1449000\" />\r\n      <workItem from=\"1774456252819\" duration=\"1601000\" />\r\n      <workItem from=\"1774471400986\" duration=\"242000\" />\r\n      <workItem from=\"1774471658758\" duration=\"389000\" />\r\n      <workItem from=\"1774472512816\" duration=\"3762000\" />\r\n      <workItem from=\"1774476319313\" duration=\"210000\" />\r\n      <workItem from=\"1774476542579\" duration=\"46000\" />\r\n      <workItem from=\"1774476601947\" duration=\"119000\" />\r\n      <workItem from=\"1774476745038\" duration=\"7000\" />\r\n      <workItem from=\"1774476763665\" duration=\"53000\" />\r\n      <workItem from=\"1774476858332\" duration=\"128000\" />\r\n      <workItem from=\"1774477276142\" duration=\"1825000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 102925d51e783dc1709b813edceea8a8c9ca8591)
++++ b/.idea/workspace.xml	(date 1774515858147)
+@@ -4,7 +4,15 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="3438ced3-b196-4134-99a5-bdcd547a6bb6" name="Changes" comment="" />
++    <list default="true" id="3438ced3-b196-4134-99a5-bdcd547a6bb6" name="Changes" comment="">
++      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/org/data_model/GUI/TaskGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/data_model/GUI/TaskGUI$1.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/tasks_management.ser" beforeDir="false" afterPath="$PROJECT_DIR$/tasks_management.ser" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -21,6 +29,9 @@
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
++  <component name="ProblemsViewState">
++    <option name="selectedTabId" value="CurrentFile" />
++  </component>
+   <component name="ProjectColorInfo">{
+   &quot;associatedIndex&quot;: 7
+ }</component>
+@@ -39,7 +50,7 @@
+     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;development&quot;,
+     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+     &quot;last_opened_file_path&quot;: &quot;C:/Users/Darius Mera/Desktop/pt2026_30222_mera_darius_assignment_1&quot;,
+@@ -48,6 +59,9 @@
+     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+@@ -105,7 +119,11 @@
+       <workItem from="1774476745038" duration="7000" />
+       <workItem from="1774476763665" duration="53000" />
+       <workItem from="1774476858332" duration="128000" />
+-      <workItem from="1774477276142" duration="1825000" />
++      <workItem from="1774477276142" duration="2798000" />
++      <workItem from="1774480888389" duration="208000" />
++      <workItem from="1774481117389" duration="842000" />
++      <workItem from="1774515047979" duration="76000" />
++      <workItem from="1774515160562" duration="52000" />
+     </task>
+     <servers />
+   </component>

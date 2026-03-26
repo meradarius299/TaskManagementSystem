@@ -1,0 +1,14 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_3_26_2026_11_56_AM_[Changes]1" date="1774518989417" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_26_2026_11_56_AM_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 3/26/2026 11:56 AM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="tasks_management.ser" />
+    <option name="AFTER_PATH" value="tasks_management.ser" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_26_2026_11_56_AM_[Changes]1/tasks_management.ser" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/org/data_model/GUI/TaskGUI$1.class" />
+    <option name="AFTER_PATH" value="target/classes/org/data_model/GUI/TaskGUI$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_26_2026_11_56_AM_[Changes]1/TaskGUI$1.class" />
+  </binary>
+</changelist>
