@@ -27,7 +27,6 @@ public class TaskGUI {
                     System.exit(0);
                 }
             });
-
             gui.setVisible(true);
         });
     }

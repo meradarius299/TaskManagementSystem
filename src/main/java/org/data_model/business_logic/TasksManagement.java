@@ -87,26 +87,36 @@ public class TasksManagement implements Serializable {
     public void addSubTaskToComplex(int employeeId, int parentTaskId, Task newSubTask) {
         for (Map.Entry<Employee, List<Task>> entry : map.entrySet()) {
             if (entry.getKey().getIdEmployee() == employeeId) {
-                List<Task> subTasks = entry.getValue();
-                if (subTasks != null) {
-                    for (Task t : subTasks) {
-                        if (t != null && t.getIdTask() == parentTaskId) {
-                            if (t instanceof ComplexTask) {
-                                ComplexTask parentTask = (ComplexTask) t;
-                                for (Task existingSubTask : parentTask.getSubtasks()) {
-                                    if (existingSubTask.getIdTask() == newSubTask.getIdTask()) {
-                                        throw new RuntimeException("Subtask with this ID:" +
-                                                newSubTask.getIdTask() + "already exists!");
-                                    }
-                                }
-                                parentTask.addSubTask(newSubTask);
-                                return;
-                            }
+                List<Task> mainTasks = entry.getValue();
+                if (mainTasks != null) {
+                    for (Task t : mainTasks) {
+                        if (findTaskAndAdd(t, parentTaskId, newSubTask)) {
+                            return;
                         }
                     }
                 }
             }
         }
+        throw new RuntimeException("Parent Task ID " + parentTaskId + " not found!");
+    }
+
+    private boolean findTaskAndAdd(Task current, int targetId, Task toAdd) {
+        if (current.getIdTask() == targetId) {
+            if (current instanceof ComplexTask) {
+                ((ComplexTask) current).addSubTask(toAdd);
+                return true;
+            } else {
+                throw new RuntimeException("Task " + targetId + " is a SimpleTask and cannot have subtasks!");
+            }
+        }
+        if (current instanceof ComplexTask) {
+            for (Task sub : ((ComplexTask) current).getSubtasks()) {
+                if (findTaskAndAdd(sub, targetId, toAdd)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public void clearAllData() {
